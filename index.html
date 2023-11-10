@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="eng">
+
+<head>
+    <title>Halloween Lottery Giveaway</title>
+    <meta content='width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./resources/css/style.css">
+    <link rel="stylesheet" href="./resources/css/reset.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Header -->
+
+    <div id="header">
+        <img id="batLeft" src="./resources/media/bat.gif" alt="Looping animation of a cartoon bat flapping its wings.">
+        <h2>Halloween<br><em id="lottery">Lottery</em><br><em id="giveaway">Giveaway</em></h2>
+        <img id="batRight" src="./resources/media/bat.gif" alt="Looping animation of a cartoon bat flapping its wings.">
+    </div>
+
+    <!-- Main Content -->
+
+    <div id="latestPlayer">
+        <p id="result">Ready to pick a new winner? Click spin!</p>
+    </div>
+
+    <div id="playerWheelContainer">
+        <div id="wheelOfFortune">
+            <canvas id="wheel" width="400" height="400"></canvas>
+            <div id="spin" onclick="play()" alt="Spin button.">SPIN</div>
+            <script>
+                function play() {
+                    var audio = document.getElementById("witchLaugh");
+                    audio.play();
+                    audio.volume = 0.5;
+                } 
+            </script>
+            <div class="audioPlayer">
+                <audio id="witchLaugh">
+                    <source src="./resources/media/Witch Laugh.wav" type="audio/wav" />This browser does not support
+                    audio.
+                </audio>
+            </div>
+        </div>
+
+        <div id="playerMenu">
+            <div class="add-player">
+                <input type="text" id="new-player" minlength="1" maxlength="16" placeholder="Add Player">
+                <button id="add-player" alt="Add Player button">+</button>
+            </div>
+            <ul id="players" alt="List of current players">
+            </ul>
+        </div>
+    </div>
+
+    <script src="./resources/js/wheel.js"></script>
+</body>
+
+<!-- Footer -->
+
+<footer>
+    <p>Powered by Peter Trebaticky's <a href="https://github.com/Peter-Trebaticky/Wheel-of-Fortune">Wheel of Fortune</a>.</p>
+</footer>
+</html>
